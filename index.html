@@ -7,183 +7,272 @@
     <title>Maiordomo - Gestión de alquileres vacacionales</title>
     <meta name="description" content="Maiordomo: gestión completa de alquileres vacacionales, desde el check-in al check-out, con atención 24/7 a tus huéspedes.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <!-- Hero Section -->
-    <section class="relative text-white" style="background-image: linear-gradient(to bottom right, rgba(37, 99, 235, 0.6), rgba(30, 64, 175, 0.6)), url('/maiordomo.png'); background-size: cover; background-position: top;">
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    Maiordomo
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 text-blue-100">
-                    Gestión completa de alquileres vacacionales
-                </p>
-                <p class="text-lg md:text-xl mb-12 text-blue-50 max-w-3xl mx-auto">
-                    Desde el check-in hasta el check-out, pasando por la atención personalizada a tus huéspedes durante toda su estancia
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contacto" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg">
-                        Solicitar Demo
+<body class="bg-slate-950 text-slate-50 antialiased">
+    <div class="relative min-h-screen overflow-hidden">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent_55%),_radial-gradient(circle_at_bottom,_rgba(59,130,246,0.25),_transparent_55%)]"></div>
+
+        <!-- Hero Section -->
+        <section class="relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20 md:pt-16 md:pb-28">
+                <header class="flex items-center justify-between mb-12">
+                    <div class="flex items-center gap-2">
+                        <div class="h-9 w-9 rounded-2xl bg-white/10 backdrop-blur flex items-center justify-center border border-white/10">
+                            <span class="text-lg font-semibold">M</span>
+                        </div>
+                        <span class="text-sm font-medium tracking-wide text-slate-200">Maiordomo</span>
+                    </div>
+                    <a href="#contacto" class="hidden sm:inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-slate-100 shadow-sm hover:bg-white/10 transition-colors">
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Solicitar demo
                     </a>
-                    <a href="#servicios" class="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 transition-colors border-2 border-white">
-                        Conocer Más
-                    </a>
+                </header>
+
+                <div class="grid lg:grid-cols-[minmax(0,_1.4fr)_minmax(0,_1fr)] gap-12 lg:gap-16 items-center">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6">
+                            Maiordomo
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-200 mb-4">
+                            Gestión completa de alquileres vacacionales
+                        </p>
+                        <p class="text-base md:text-lg text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0">
+                            Desde el check-in hasta el check-out, pasando por la atención personalizada a tus huéspedes durante toda su estancia
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#contacto" class="inline-flex items-center justify-center rounded-full bg-emerald-400 px-7 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/30 hover:bg-emerald-300 transition-colors">
+                                Solicitar Demo
+                            </a>
+                            <a href="#servicios" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-medium text-slate-50 hover:bg-white/10 transition-colors">
+                                Conocer Más
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-emerald-400/20 via-sky-400/10 to-indigo-500/20 blur-2xl"></div>
+                        <div class="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-8 shadow-2xl shadow-sky-900/40">
+                            <div class="mb-6 flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs uppercase tracking-[0.18em] text-slate-300/80 mb-1">Panel de reservas</p>
+                                    <p class="text-sm font-semibold text-slate-50">Propiedades conectadas</p>
+                                </div>
+                                <span class="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-300 border border-emerald-400/40">24/7 activo</span>
+                            </div>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center justify-between rounded-2xl bg-slate-900/40 border border-white/5 px-4 py-3">
+                                    <div>
+                                        <p class="text-xs text-slate-400">Check-in de hoy</p>
+                                        <p class="text-sm font-medium text-slate-50">Huéspedes automatizados</p>
+                                    </div>
+                                    <p class="text-xl font-semibold text-emerald-300">100%</p>
+                                </div>
+                                <div class="grid grid-cols-3 gap-3 text-center">
+                                    <div class="rounded-2xl bg-slate-900/40 border border-white/5 px-3 py-3">
+                                        <p class="text-[11px] text-slate-400 mb-1">Check-in</p>
+                                        <p class="text-lg font-semibold text-slate-50">Digital</p>
+                                    </div>
+                                    <div class="rounded-2xl bg-slate-900/40 border border-white/5 px-3 py-3">
+                                        <p class="text-[11px] text-slate-400 mb-1">Atención</p>
+                                        <p class="text-lg font-semibold text-slate-50">24/7</p>
+                                    </div>
+                                    <div class="rounded-2xl bg-slate-900/40 border border-white/5 px-3 py-3">
+                                        <p class="text-[11px] text-slate-400 mb-1">Procesos</p>
+                                        <p class="text-lg font-semibold text-slate-50">Auto</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-400">
+                                Desde el primer mensaje hasta el check-out, Maiordomo acompaña toda la experiencia del huésped.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Section -->
-    <section id="servicios" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Nuestros Servicios
-                </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Todo lo que necesitas para gestionar tus propiedades de forma profesional
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Check-in -->
-                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Check-in Digital</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Proceso de entrada automatizado y sin contacto. Tus huéspedes reciben toda la información necesaria antes de su llegada.
-                    </p>
-                </div>
-
-                <!-- Atención durante estancia -->
-                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Atención 24/7</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Asistencia inmediata a tus huéspedes mediante chatbot inteligente y equipo humano disponible en todo momento.
-                    </p>
-                </div>
-
-                <!-- Check-out -->
-                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Check-out Eficiente</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Salida sin complicaciones con instrucciones claras y verificación automática del estado de la propiedad.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                        ¿Por qué elegir Maiordomo?
+        <!-- Features Section -->
+        <section id="servicios" class="relative z-10 py-20 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-50 mb-4">
+                        Nuestros Servicios
                     </h2>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
+                    <p class="text-base md:text-lg text-slate-300 max-w-2xl mx-auto">
+                        Todo lo que necesitas para gestionar tus propiedades de forma profesional
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Check-in -->
+                    <div class="group relative rounded-2xl border border-white/10 bg-white/5 p-6 md:p-7 backdrop-blur-sm shadow-lg shadow-slate-950/40 overflow-hidden">
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-emerald-400/10 via-sky-400/5 to-transparent pointer-events-none"></div>
+                        <div class="relative">
+                            <div class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-400/15 border border-emerald-300/50">
+                                <svg class="w-6 h-6 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
                             </div>
-                            <div class="ml-4">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Ahorra tiempo</h3>
-                                <p class="text-gray-600">Automatiza tareas repetitivas y céntrate en hacer crecer tu negocio</p>
-                            </div>
+                            <h3 class="text-xl font-semibold text-slate-50 mb-3">Check-in Digital</h3>
+                            <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                                Proceso de entrada automatizado y sin contacto. Tus huéspedes reciben toda la información necesaria antes de su llegada.
+                            </p>
                         </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
+                    </div>
+
+                    <!-- Atención durante estancia -->
+                    <div class="group relative rounded-2xl border border-white/10 bg-white/5 p-6 md:p-7 backdrop-blur-sm shadow-lg shadow-slate-950/40 overflow-hidden">
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-sky-400/15 via-emerald-400/5 to-transparent pointer-events-none"></div>
+                        <div class="relative">
+                            <div class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-400/15 border border-sky-300/50">
+                                <svg class="w-6 h-6 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                </svg>
                             </div>
-                            <div class="ml-4">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Mejora la experiencia</h3>
-                                <p class="text-gray-600">Huéspedes más satisfechos significan mejores reseñas y más reservas</p>
-                            </div>
+                            <h3 class="text-xl font-semibold text-slate-50 mb-3">Atención 24/7</h3>
+                            <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                                Asistencia inmediata a tus huéspedes mediante chatbot inteligente y equipo humano disponible en todo momento.
+                            </p>
                         </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
+                    </div>
+
+                    <!-- Check-out -->
+                    <div class="group relative rounded-2xl border border-white/10 bg-white/5 p-6 md:p-7 backdrop-blur-sm shadow-lg shadow-slate-950/40 overflow-hidden">
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-indigo-400/15 via-sky-400/5 to-transparent pointer-events-none"></div>
+                        <div class="relative">
+                            <div class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-400/15 border border-indigo-300/50">
+                                <svg class="w-6 h-6 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                </svg>
                             </div>
-                            <div class="ml-4">
-                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Gestión profesional</h3>
-                                <p class="text-gray-600">Herramientas profesionales al alcance de tu mano</p>
-                            </div>
+                            <h3 class="text-xl font-semibold text-slate-50 mb-3">Check-out Eficiente</h3>
+                            <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                                Salida sin complicaciones con instrucciones claras y verificación automática del estado de la propiedad.
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-12 text-white">
-                    <div class="text-center">
-                        <div class="text-5xl font-bold mb-4">24/7</div>
-                        <p class="text-xl mb-8">Disponibilidad total para tus huéspedes</p>
-                        <div class="text-5xl font-bold mb-4">100%</div>
-                        <p class="text-xl">Automatización de procesos rutinarios</p>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="relative z-10 py-20 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-50 mb-6">
+                            ¿Por qué elegir Maiordomo?
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-9 h-9 rounded-2xl bg-emerald-400/15 border border-emerald-300/60 flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-50 mb-1.5">Ahorra tiempo</h3>
+                                    <p class="text-sm md:text-base text-slate-300">Automatiza tareas repetitivas y céntrate en hacer crecer tu negocio</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-9 h-9 rounded-2xl bg-sky-400/15 border border-sky-300/60 flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-50 mb-1.5">Mejora la experiencia</h3>
+                                    <p class="text-sm md:text-base text-slate-300">Huéspedes más satisfechos significan mejores reseñas y más reservas</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-9 h-9 rounded-2xl bg-indigo-400/15 border border-indigo-300/60 flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-50 mb-1.5">Gestión profesional</h3>
+                                    <p class="text-sm md:text-base text-slate-300">Herramientas profesionales al alcance de tu mano</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-10 md:p-12 shadow-2xl shadow-sky-900/40 flex flex-col items-center justify-center text-center">
+                        <div class="mb-8">
+                            <div class="text-5xl md:text-6xl font-semibold text-emerald-300 mb-3">24/7</div>
+                            <p class="text-base md:text-lg text-slate-200">Disponibilidad total para tus huéspedes</p>
+                        </div>
+                        <div>
+                            <div class="text-5xl md:text-6xl font-semibold text-sky-300 mb-3">100%</div>
+                            <p class="text-base md:text-lg text-slate-200">Automatización de procesos rutinarios</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section id="contacto" class="py-20 bg-blue-600">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-                ¿Listo para transformar tu gestión de alquileres?
-            </h2>
-            <p class="text-xl text-blue-100 mb-8">
-                Únete a los propietarios que ya confían en Maiordomo para gestionar sus propiedades
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="mailto:info@maiordomo.com" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg inline-block">
-                    Contactar Ahora
-                </a>
-                <a href="/login" class="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-800 transition-colors border-2 border-white inline-block">
-                    Acceder a mi cuenta
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h3 class="text-2xl font-bold text-white mb-4">Maiordomo</h3>
-                <p class="mb-6">Gestión profesional de alquileres vacacionales</p>
-                <div class="text-sm text-gray-400">
-                    © 2025 Maiordomo. Todos los derechos reservados.
+        <!-- CTA Section -->
+        <section id="contacto" class="relative z-10 py-20 md:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="rounded-3xl border border-emerald-300/30 bg-gradient-to-r from-emerald-400/15 via-slate-900/60 to-sky-400/15 px-6 py-10 md:px-12 md:py-12 text-center shadow-2xl shadow-emerald-500/20">
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-50 mb-5">
+                        ¿Listo para transformar tu gestión de alquileres?
+                    </h2>
+                    <p class="text-base md:text-lg text-slate-200 mb-8 max-w-2xl mx-auto">
+                        Únete a los propietarios que ya confían en Maiordomo para gestionar sus propiedades
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="mailto:info@maiordomo.com" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-slate-900/30 hover:bg-slate-100 transition-colors">
+                            Contactar Ahora
+                        </a>
+                        <a href="/login" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-transparent px-8 py-3 text-sm font-medium text-slate-50 hover:bg-white/10 transition-colors">
+                            Acceder a mi cuenta
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Footer -->
+        <footer class="relative z-10 border-t border-white/10 bg-black/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
+                <div class="flex flex-col items-center gap-4 text-center">
+                    <h3 class="text-xl font-semibold text-slate-50">Maiordomo</h3>
+                    <p class="text-sm text-slate-400">Gestión profesional de alquileres vacacionales</p>
+                    <div class="text-xs text-slate-500">
+                        © 2025 Maiordomo. Todos los derechos reservados.
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
