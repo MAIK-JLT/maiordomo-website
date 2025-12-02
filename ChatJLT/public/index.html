@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Cliente - ChatJLT</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .content {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: #27ae60;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bienvenido a Mi Empresa Ficticia</h1>
+        <p>Esta es una página de demostración para probar el widget de chat.</p>
+    </header>
+
+    <div class="content">
+        <h2>Nuestros Servicios</h2>
+        <p>Ofrecemos soluciones innovadoras para problemas complejos. Nuestra misión es simplificar la tecnología para
+            todos.</p>
+
+        <h3>¿Qué hacemos?</h3>
+        <ul class="feature-list">
+            <li>Consultoría tecnológica avanzada</li>
+            <li>Desarrollo de software a medida</li>
+            <li>Integración de Inteligencia Artificial</li>
+            <li>Soporte 24/7 para clientes premium</li>
+        </ul>
+
+        <h3>Precios</h3>
+        <p>Nuestros planes comienzan desde <strong>$99/mes</strong> para startups y <strong>$499/mes</strong> para
+            empresas consolidadas.</p>
+
+        <p><em>Nota: El widget de chat en la esquina inferior derecha debería ser capaz de responder preguntas sobre
+                esta información.</em></p>
+    </div>
+
+    <!-- Script del Widget -->
+    <script src="/widget.js"></script>
+</body>
+
+</html>

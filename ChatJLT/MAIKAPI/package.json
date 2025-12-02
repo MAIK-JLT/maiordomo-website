@@ -1,0 +1,19 @@
+{
+  "name": "maikapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@octokit/rest": "^21.0.2",
+    "axios": "^1.7.7",
+    "express": "^4.21.0",
+    "google-ads-api": "^17.1.0",
+    "openai": "^4.63.0"
+  }
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const reservationCode = params.get('reservationCode');
+    if (reservationCode) {
+      window.location.href = 
+      'https://script.google.com/macros/s/AKfycbze8VV7aGfcb1tBQrwlyJmvfscJQUkjrW6vfgkJaHUhKCzyIYhXtTD0YMa7tSxF4H0/exec?reservationCode=' + encodeURIComponent(reservationCode);
+      
+    } else {
+      document.write('Error: Código de reserva no proporcionado.');
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

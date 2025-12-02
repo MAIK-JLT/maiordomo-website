@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatJLT</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>accesos</h2>
+    <a href="#">Herramientas</a>
+    <a href="#">Proyectos</a>
+    <a href="#">Campañas</a>
+    <a href="#">Landings</a>
+    <a href="#">RRSS</a>
+    <a href="#">Notion</a>
+  </div>
+
+  <div class="main-content">
+    <div class="chat-box" id="chat-window">
+      <p>Bienvenido a ChatJLT, ¿cómo puedo ayudarte?</p>
+    </div>
+
+    <div class="input-area">
+      <form id="llm-form">
+        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." required>
+        <button type="submit" id="chat-button">Enviar</button>
+      </form>
+      <button class="voice-record-btn">🎤 Voz</button>
+    </div>
+
+    <div class="file-upload">
+      <label for="file-upload">Subir archivo:</label>
+      <input type="file" id="file-upload">
+      <button onclick="enviarArchivo()">Subir archivo</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('llm-form');
+      const chatInput = document.getElementById('chat-input');
+      const chatWindow = document.getElementById('chat-window');
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();  // Prevenir la recarga de la página
+
+        const query = chatInput.value;
+
+        // Verificar si el input está vacío
+        if (query.trim() === "") {
+          alert("El mensaje no puede estar vacío.");
+          return;
+        }
+
+        // Mostrar el mensaje del usuario en la ventana de chat
+        const userMessage = document.createElement('p');
+        userMessage.textContent = `Tú: ${query}`;
+        chatWindow.appendChild(userMessage);
+
+        // Enviar la petición al servidor
+        try {
+          const response = await fetch('http://localhost:4000/api/query', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ query })
+          });
+
+          const result = await response.json();
+
+          // Mostrar la respuesta del LLM en la ventana de chat
+          const llmResponse = document.createElement('p');
+          llmResponse.textContent = `LLM: ${result.prompt}`;
+          chatWindow.appendChild(llmResponse);
+
+        } catch (error) {
+          console.error('Error al enviar la consulta:', error);
+          const errorMessage = document.createElement('p');
+          errorMessage.textContent = 'Hubo un problema con el servidor.';
+          chatWindow.appendChild(errorMessage);
+        }
+
+        // Limpiar el input después de enviar
+        chatInput.value = '';
+      });
+    });
+  </script>
+  <script>
+    document.querySelector('form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const query = document.querySelector('input[name="query"]').value;
+      const response = await fetch('/api/query', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query })
+      });
+      const data = await response.json();
+      document.querySelector('#chat-window').innerHTML += `<p>${data.prompt}</p>`;
+    });
+  </script>
+    <script>
+      const element = document.querySelector('#myElement');
+      // Do something with the element
+    </script>
+
+</body>
+</html>

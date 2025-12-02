@@ -1,0 +1,14 @@
+.DS_Store
+.Trash/
+.android/
+.vscode/
+node_modules/
+venv/
+.env
+
+
+
+
+.aider*
+python.langchain.com/
+langchain_tutorial/

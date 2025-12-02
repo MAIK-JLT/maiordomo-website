@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatJLT - Personal Assistant</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Agents</h2>
+        <div>
+            <label for="agent">Select Agent:</label>
+            <select id="agent">
+                <option value="agentOpenAi">OpenAI Assistant</option>
+                <option value="agentGitHub">GitHub Assistant</option>
+                <!-- Add more agents as needed -->
+            </select>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="chat-box" id="chat-container">
+            <div id="chat-window">
+                <div id="messages"></div>
+            </div>
+        </div>
+
+        <div class="input-area" id="user-input">
+            <input type="text" id="message-input" placeholder="Type your message here...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <!-- JavaScript integrado -->
+    <script>
+        document.getElementById('send-button').addEventListener('click', async () => {
+            const messageInput = document.getElementById('message-input');
+            const agentSelect = document.getElementById('agent');
+
+            const message = messageInput.value;
+            const agent = agentSelect.value;
+
+            if (!message) {
+                alert('Please enter a message');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message, agent }),
+                });
+
+                const data = await response.json();
+                document.getElementById('messages').innerHTML += `<div>User: ${message}</div>`;
+                document.getElementById('messages').innerHTML += `<div>Assistant: ${data.response}</div>`;
+
+                messageInput.value = ''; // Limpiar el campo de entrada después de enviar
+            } catch (error) {
+                console.error('Error al enviar el mensaje:', error);
+            }
+        });
+    </script>
+</body>
+</html>
